@@ -2,7 +2,7 @@ package de.kohnlehome;
 
 import java.util.Arrays;
 
-public class MergeSort implements IMergeSort{
+public class MergeSort implements IMergeSort {
     private IMerger merger;
 
     public MergeSort(IMerger merger) {
@@ -11,24 +11,20 @@ public class MergeSort implements IMergeSort{
 
     @Override
     public int[] sort(int[] unsortedArray) {
-        if(unsortedArray.length <= 1){
+        if (unsortedArray.length <= 1) {
             return unsortedArray;
-        }
-        else{
-         int mid = unsortedArray.length/2;
+        } else {
+            int mid = unsortedArray.length / 2;
 
-         int[] leftSideOfArray = Arrays.copyOfRange(unsortedArray,0,mid);
-         int[] rightSideOfArray= Arrays.copyOfRange(unsortedArray, mid, unsortedArray.length);
+            int[] leftSideOfArray = Arrays.copyOfRange(unsortedArray, 0, mid);
+            int[] rightSideOfArray = Arrays.copyOfRange(unsortedArray, mid, unsortedArray.length);
 
-         leftSideOfArray = sort(leftSideOfArray);
-         rightSideOfArray = sort(rightSideOfArray);
+            leftSideOfArray = sort(leftSideOfArray);
+            rightSideOfArray = sort(rightSideOfArray);
 
+            int[] merge = merger.merge(leftSideOfArray, rightSideOfArray);
 
-
-         int[] merge = merger.merge(leftSideOfArray, rightSideOfArray);
-
-         return merge;
-
+            return merge;
         }
     }
 
