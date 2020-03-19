@@ -22,9 +22,9 @@ public class MergeSort implements IMergeSort {
             leftSideOfArray = sort(leftSideOfArray);
             rightSideOfArray = sort(rightSideOfArray);
 
-            int[] merge = merger.merge(leftSideOfArray, rightSideOfArray);
+            int[] result = merger.merge(leftSideOfArray, rightSideOfArray);
 
-            return merge;
+            return result;
         }
     }
 
