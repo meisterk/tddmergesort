@@ -22,7 +22,7 @@ public class SortierenTask extends RecursiveTask<int[]> {
             int[] leftSideOfArray = Arrays.copyOfRange(unsortedArray, 0, mid);
             int[] rightSideOfArray = Arrays.copyOfRange(unsortedArray, mid, unsortedArray.length);
 
-           // leftSideOfArray = sort(leftSideOfArray);
+            // leftSideOfArray = sort(leftSideOfArray);
             //rightSideOfArray = sort(rightSideOfArray);
 
             int[] result = merger.merge(leftSideOfArray, rightSideOfArray);

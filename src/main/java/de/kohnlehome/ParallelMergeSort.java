@@ -2,7 +2,7 @@ package de.kohnlehome;
 
 import java.util.concurrent.ForkJoinPool;
 
-public class ParallelMergeSort implements IMergeSort{
+public class ParallelMergeSort implements IMergeSort {
     private IMerger merger;
     private ForkJoinPool forkJoinPool;
 
