@@ -12,7 +12,6 @@ public class ParalleMergeSortIntegrationTest {
     public void init() {
         //Arrange
         IMerger merger = new Merger();
-
         mergeSort = new ParallelMergeSort(merger);
     }
 
@@ -23,7 +22,7 @@ public class ParalleMergeSortIntegrationTest {
         int[] sorted = mergeSort.sort(unsorted);
 
         //Assert
-        int[]expected = {1,2,3,4,5};
+        int[] expected = {1,2,3,4,5};
         assertThat(sorted).isEqualTo(expected);
     }
 }

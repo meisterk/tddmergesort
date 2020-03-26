@@ -27,5 +27,4 @@ public class MergeSort implements IMergeSort {
             return result;
         }
     }
-
 }
