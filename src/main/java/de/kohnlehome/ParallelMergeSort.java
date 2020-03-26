@@ -14,7 +14,7 @@ public class ParallelMergeSort implements IMergeSort{
     @Override
     public int[] sort(int[] unsortedArray) {
         SortierenTask sortierenTask = new SortierenTask(unsortedArray, merger);
-        forkJoinPool.invoke(sortierenTask); // compute-Methode aufrufen
-        return sortierenTask.join(); // Rückgabewert der compute-Methode
+        forkJoinPool.invoke(sortierenTask); // call compute() method in sortierenTask
+        return sortierenTask.join(); // get return value of compute() method
     }
 }
