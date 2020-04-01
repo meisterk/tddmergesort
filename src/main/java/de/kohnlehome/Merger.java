@@ -17,6 +17,7 @@ public class Merger implements IMerger {
             }
             indexNeueListe += 1;
         }
+
         while (indexLinkeListe < leftSide.length) {
             neueListe[indexNeueListe] = leftSide[indexLinkeListe];
             indexLinkeListe += 1;
@@ -28,5 +29,7 @@ public class Merger implements IMerger {
             indexNeueListe += 1;
         }
         return neueListe;
+
+
     }
 }

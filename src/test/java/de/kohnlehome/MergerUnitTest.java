@@ -31,4 +31,15 @@ public class MergerUnitTest {
         //Assert
         assertThat(result).isEqualTo(new int[]{1,2,3,4,5});
     }
+
+    @Test
+    public void test22689(){
+        //Act
+        int[] result = merger.merge(new int[]{2,6,9}, new int[]{2,8});
+
+        //Assert
+        assertThat(result).isEqualTo(new int[]{2,2,6,8,9});
+    }
+
+
 }
