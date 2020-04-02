@@ -24,6 +24,13 @@ public class SortPerformanceTest {
 
         ISortAlgorithm mergeSort = new MergeSort(new Merger());
         messenUndAusgeben(mergeSort);
+
+        ISortAlgorithm arraysSort = new ArraysSort();
+        messenUndAusgeben(arraysSort);
+
+        ISortAlgorithm arraysParallelSort = new ArraysParallelSort();
+        messenUndAusgeben(arraysParallelSort);
+
     }
 
     private void messenUndAusgeben(ISortAlgorithm sortAlgorithm) {
