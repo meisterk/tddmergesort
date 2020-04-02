@@ -3,15 +3,13 @@ package de.kohnlehome;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import java.util.Arrays;
-
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
 public class MergeSortUnitTest {
 
-    private IMergeSort mergeSort;
+    private ISortAlgorithm mergeSort;
 
     @BeforeEach
     public void init() {

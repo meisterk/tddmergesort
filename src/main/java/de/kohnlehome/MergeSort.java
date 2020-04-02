@@ -2,7 +2,7 @@ package de.kohnlehome;
 
 import java.util.Arrays;
 
-public class MergeSort implements IMergeSort{
+public class MergeSort implements ISortAlgorithm {
     private IMerger merger;
 
     public MergeSort(IMerger merger) {

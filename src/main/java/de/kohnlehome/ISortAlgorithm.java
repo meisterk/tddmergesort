@@ -1,5 +1,5 @@
 package de.kohnlehome;
 
-public interface IMergeSort {
+public interface ISortAlgorithm {
     int[] sort(int[] unsortedArray);
 }

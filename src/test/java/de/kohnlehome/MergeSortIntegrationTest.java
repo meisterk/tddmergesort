@@ -8,7 +8,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 public class MergeSortIntegrationTest {
 
-    private IMergeSort mergeSort;
+    private ISortAlgorithm mergeSort;
 
     @BeforeEach
     public void init() {
