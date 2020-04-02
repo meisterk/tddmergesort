@@ -6,30 +6,32 @@ import java.util.Random;
 
 public class SortPerformanceTest {
 
-    private final int size = 10000;
+    private final int size = 10000000;
+    private int[] unsortedArray;
 
     @Test
-    public void testPerformance(){
+    public void testPerformance() {
         //großes Array mit Zufallszahlen erstellen
         Random rand = new Random();
-        int[] unsortedArray = new int[size];
+        unsortedArray = new int[size];
 
-        for(int i = 0; i< size;i++){
-            unsortedArray[i] = rand.nextInt(size+1);
+        for (int i = 0; i < size; i++) {
+            unsortedArray[i] = rand.nextInt(size + 1);
         }
 
         ISortAlgorithm parallelMergeSort = new ParallelMergeSort(new Merger());
-        messenUndAusgeben(unsortedArray, parallelMergeSort);
+        messenUndAusgeben(parallelMergeSort);
 
         ISortAlgorithm mergeSort = new MergeSort(new Merger());
-        messenUndAusgeben(unsortedArray, mergeSort);
+        messenUndAusgeben(mergeSort);
     }
 
-    private void messenUndAusgeben(int[] unsortedArray, ISortAlgorithm sortAlgorithm){
+    private void messenUndAusgeben(ISortAlgorithm sortAlgorithm) {
+        int[] copyOfArray = unsortedArray.clone();
         long startTime = System.nanoTime();
-        sortAlgorithm.sort(unsortedArray);
+        sortAlgorithm.sort(copyOfArray);
         long endTime = System.nanoTime();
-        long durationInMs = (endTime-startTime)/1000000;
-        System.out.println(sortAlgorithm.getClass().getSimpleName() +":\t" + durationInMs + "ms");
+        long durationInMs = (endTime - startTime) / 1000000;
+        System.out.println(sortAlgorithm.getClass().getSimpleName() + ":\t" + durationInMs + "ms");
     }
 }
