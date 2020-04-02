@@ -6,7 +6,7 @@ import java.util.Random;
 
 public class SortPerformanceTest {
 
-    private final int size = 10000000;
+    private final int size = 10000;
 
     @Test
     public void testPerformance(){
@@ -18,28 +18,18 @@ public class SortPerformanceTest {
             unsortedArray[i] = rand.nextInt(size+1);
         }
 
-        //Startzeit messen ParallelSort
-        long parallelStart = System.nanoTime();
-        //sortieren
-        ParallelMergeSort parallelMergeSort = new ParallelMergeSort(new Merger());
-        parallelMergeSort.sort(unsortedArray);
-        //Endzeit messen ParallelSort
-        long parallelEnde = System.nanoTime();
+        ISortAlgorithm parallelMergeSort = new ParallelMergeSort(new Merger());
+        messenUndAusgeben(unsortedArray, parallelMergeSort);
 
-        //Startzeit messen MergeSort
-        long mergeStart = System.nanoTime();
-        //sortieren
-        MergeSort mergeSort = new MergeSort(new Merger());
-        mergeSort.sort(unsortedArray);
-        //Endzeit messen MergeSort
-        long mergeEnde = System.nanoTime();
+        ISortAlgorithm mergeSort = new MergeSort(new Merger());
+        messenUndAusgeben(unsortedArray, mergeSort);
+    }
 
-        //Differenzen berechnen
-        long difMergeInMs = (mergeEnde-mergeStart)/1000000;
-        long difParalInMs = (parallelEnde-parallelStart)/1000000;
-
-        //Differenz ausgeben
-        System.out.println("MergeSort:\t" + difMergeInMs + "ms");
-        System.out.println("ParallelSort:\t" + difParalInMs + "ms");
+    private void messenUndAusgeben(int[] unsortedArray, ISortAlgorithm sortAlgorithm){
+        long startTime = System.nanoTime();
+        sortAlgorithm.sort(unsortedArray);
+        long endTime = System.nanoTime();
+        long durationInMs = (endTime-startTime)/1000000;
+        System.out.println(sortAlgorithm.getClass().getSimpleName() +":\t" + durationInMs + "ms");
     }
 }
