@@ -6,7 +6,7 @@ import java.util.Random;
 
 public class MergeSortPerformanceTest {
 
-    private final int size = 100000000;
+    private final int size = 10000000;
 
     @Test
     public void testPerformance(){
