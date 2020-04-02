@@ -4,7 +4,7 @@ import org.junit.jupiter.api.Test;
 
 import java.util.Random;
 
-public class MergeSortPerformanceTest {
+public class SortPerformanceTest {
 
     private final int size = 10000000;
 
