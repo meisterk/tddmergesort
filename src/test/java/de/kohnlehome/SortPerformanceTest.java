@@ -22,6 +22,12 @@ public class SortPerformanceTest {
         ISortAlgorithm parallelMergeSort = new ParallelMergeSort(new Merger());
         messenUndAusgeben(parallelMergeSort);
 
+        ISortAlgorithm parallelSortThreshold100 = new ParallelSortThreshold(new Merger(), 1);
+        messenUndAusgeben(parallelSortThreshold100);
+
+        ISortAlgorithm parallelSortThreshold1000 = new ParallelSortThreshold(new Merger(), 10000000);
+        messenUndAusgeben(parallelSortThreshold1000);
+
         ISortAlgorithm mergeSort = new MergeSort(new Merger());
         messenUndAusgeben(mergeSort);
 
